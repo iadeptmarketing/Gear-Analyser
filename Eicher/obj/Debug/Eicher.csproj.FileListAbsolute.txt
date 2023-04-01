@@ -1,0 +1,111 @@
+C:\Users\User\Desktop\Eicher\Eicher\bin\Debug\Eicher.exe.config
+C:\Users\User\Desktop\Eicher\Eicher\bin\Debug\Eicher.exe
+C:\Users\User\Desktop\Eicher\Eicher\bin\Debug\Eicher.pdb
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.Form1.resources
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.Properties.Resources.resources
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.exe
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.pdb
+C:\Users\User\Desktop\Eicher\Eicher\bin\Debug\IMChart2D.dll
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.csproj.CopyComplete
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.FrmSettings.resources
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.AlarmSettings.resources
+C:\Users\User\Desktop\Eicher\Eicher\obj\Debug\Eicher.ShowReport.resources
+C:\Users\rohit_000\Desktop\Eicher\Eicher\bin\Debug\IMChart2D.dll
+C:\Users\rohit_000\Desktop\Eicher\Eicher\bin\Debug\Microsoft.Office.Interop.Word.dll
+C:\Users\rohit_000\Desktop\Eicher\Eicher\bin\Debug\trial6.dll
+C:\Users\rohit_000\Desktop\Eicher\Eicher\bin\Debug\stdole.dll
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.csproj.AssemblyReference.cache
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Interop.VSTOEE100.dll
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.csproj.ResolveComReference.cache
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.AlarmSettings.resources
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.Form1.resources
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.FrmSettings.resources
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.Properties.Resources.resources
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.ShowReport.resources
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.csproj.GenerateResource.cache
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.csproj.CoreCompileInputs.cache
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.csproj.CopyComplete
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.About.resources
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.Graph.resources
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\Eicher.frmLogin.resources
+C:\Users\rohit_000\Desktop\Eicher\Eicher\bin\Debug\GearAnalyser.exe.config
+C:\Users\rohit_000\Desktop\Eicher\Eicher\bin\Debug\GearAnalyser.exe
+C:\Users\rohit_000\Desktop\Eicher\Eicher\bin\Debug\GearAnalyser.pdb
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\GearAnalyser.exe
+C:\Users\rohit_000\Desktop\Eicher\Eicher\obj\Debug\GearAnalyser.pdb
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\bin\Debug\GearAnalyser.exe.config
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\bin\Debug\GearAnalyser.exe
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\bin\Debug\GearAnalyser.pdb
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\bin\Debug\IMChart2D.dll
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\bin\Debug\Microsoft.Office.Interop.Word.dll
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\bin\Debug\trial6.dll
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\bin\Debug\stdole.dll
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.csprojAssemblyReference.cache
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Interop.VSTOEE100.dll
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.csproj.ResolveComReference.cache
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.About.resources
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.AlarmSettings.resources
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.Form1.resources
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.frmLogin.resources
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.FrmSettings.resources
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.Graph.resources
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.Properties.Resources.resources
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.ShowReport.resources
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.csproj.GenerateResource.cache
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.csproj.CoreCompileInputs.cache
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\Eicher.csproj.CopyComplete
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\GearAnalyser.exe
+C:\Users\cjaina7\Downloads\Eicher (1)\Eicher\Eicher\obj\Debug\GearAnalyser.pdb
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\GearAnalyser.exe.config
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\GearAnalyser.exe
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\GearAnalyser.pdb
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\IMChart2D.dll
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\Microsoft.Office.Interop.Word.dll
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\trial6.dll
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\office.dll
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\stdole.dll
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\bin\Debug\office.xml
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Interop.VSTOEE100.dll
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.csproj.ResolveComReference.cache
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.About.resources
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.AlarmSettings.resources
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.Form1.resources
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.frmLogin.resources
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.FrmSettings.resources
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.Graph.resources
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.Properties.Resources.resources
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.ShowReport.resources
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\Eicher.csproj.CopyComplete
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\GearAnalyser.exe
+C:\Users\User\Desktop\Kamlesh\Eicher\Eicher\obj\Debug\GearAnalyser.pdb
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\bin\Debug\GearAnalyser.exe.config
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\bin\Debug\GearAnalyser.exe
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\bin\Debug\GearAnalyser.pdb
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\bin\Debug\IMChart2D.dll
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\bin\Debug\Microsoft.Office.Interop.Word.dll
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\bin\Debug\trial6.dll
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\bin\Debug\stdole.dll
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Interop.VSTOEE100.dll
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.csproj.ResolveComReference.cache
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.About.resources
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.AlarmSettings.resources
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.Form1.resources
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.frmLogin.resources
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.FrmSettings.resources
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.Graph.resources
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.Properties.Resources.resources
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.ShowReport.resources
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\Eicher.csproj.CopyComplete
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\GearAnalyser.exe
+C:\Users\User\Desktop\Amit Jain\Gear Analyser 2023\Eicher code 3 feb 2022\Eicher\Eicher\obj\Debug\GearAnalyser.pdb
