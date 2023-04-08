@@ -15,7 +15,7 @@ namespace Eicher
         public FrmSettings()
         {
             InitializeComponent();
-            FileHandling fileHandling = new FileHandling();
+            FileHandling fileHandling = FileHandling.GetInstance();
             GearTeeth = fileHandling.ReadDefault(Constants.GEAR);
             PinionTeeth = fileHandling.ReadDefault(Constants.PINION);
         }

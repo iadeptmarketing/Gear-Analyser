@@ -10,7 +10,10 @@ namespace Eicher
     {
         public const string PASS = "Pass";
         public const string FAIL = "Fail";
-        public const string STATUS = "Status";
+        public const string STATUS = "Final_Status";
+        public const string STATUS_CH1 = "Status_CH1";
+        public const string STATUS_CH2 = "Status_CH2";
+        public const string STATUS_CH3 = "Status_CH3";
         public const string LOCALFILEPATH = @"C:\test\test.fft";
         public const string LOCALTEMPFOLDER = @"C:\test\";
         public const string LOCALTEMPREPORTFILE = "TEMP.DAT";
@@ -24,6 +27,9 @@ namespace Eicher
         public const string FORWARD= "Forward";
         public const string REVERSE = "Reverse";
         public const string HIGHEST = "Highest";
+        public const string HIGHEST_GM_CH1 = "Highest_CH1";
+        public const string HIGHEST_GM_CH2 = "Highest_CH2";
+        public const string HIGHEST_GM_CH3 = "Highest_CH3";
         public const string GM1 = "GM1-Ch1";
         public const string GM2 = "GM2-Ch1";
         public const string GM3 = "GM3-Ch1";
