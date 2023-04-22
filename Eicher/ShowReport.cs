@@ -143,7 +143,7 @@ namespace Eicher
             {
                 fileHandling = FileHandling.GetInstance();
                 fileName = SaveFileDialog1.FileName;
-                fileHandling.SaveReportFileHeader(SaveFileDialog1.FileName);
+                //fileHandling.SaveReportFileHeader(SaveFileDialog1.FileName);
                 return;
             }
             fileHandling = null;

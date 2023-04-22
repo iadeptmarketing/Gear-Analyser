@@ -11,7 +11,8 @@ namespace Eicher
     public sealed class FileHandling
     {
         private const string tabShift = "\t";
-        string defaultString = "N/A";
+        private const string newLine = "\n";
+        string stringNotApplicable = "N/A";
         public Form1 Form1 { get; set; }
 
         private static FileHandling Instance = null;
@@ -298,7 +299,8 @@ namespace Eicher
         public void SaveReportValues(string fileName, string BatchNo, String GearNo, List<Dictionary<string, string>> dataSet)
         {
             string status = Constants.FAIL;
-            StringBuilder content = AppendDefaultData(BatchNo, GearNo, dataSet);
+            StringBuilder content = AppendBasicInfo(dataSet);
+            content.Append(AppendDefaultData(BatchNo, GearNo, dataSet));
 
             if (dataSet[1].Count > 0) //Checking if both forward and reverse data available in dataset
             {
@@ -308,52 +310,86 @@ namespace Eicher
                     status = Constants.PASS;
                 }
 
-                content.Append(tabShift + dataSet[1][Constants.HIGHEST] +
-                    tabShift + dataSet[1][Constants.HIGHEST_GM_CH1] +
-                    tabShift + dataSet[1][Constants.RPM]);
+                content.Append(tabShift + dataSet[1][Constants.HIGHEST_GM_CH1] +
+                    tabShift + dataSet[1][Constants.RPM] +
+                    tabShift + dataSet[1][Constants.STATUS_CH1]);
 
-                //if (Form1.ChannelCount >= 2)
-                try
+                if (Form1.ChannelCount >= 2)
                 {
-                    content.Append(tabShift + dataSet[0][Constants.STATUS_CH1] +
-                        tabShift + dataSet[0][Constants.HIGHEST_GM_CH2] +
-                        tabShift + dataSet[1][Constants.HIGHEST_GM_CH2] +
-                        tabShift + dataSet[0][Constants.STATUS_CH2]);
+                    try
+                    {
+                        content.Append(tabShift + dataSet[0][Constants.HIGHEST_GM_CH2] +
+                            tabShift + dataSet[0][Constants.STATUS_CH2]+
+                            tabShift + dataSet[1][Constants.HIGHEST_GM_CH2] +
+                            tabShift + dataSet[1][Constants.STATUS_CH2]);
+                    }
+                    catch
+                    { }
                 }
-                catch
-                { }
-
-                //if (Form1.ChannelCount >= 3)
-                try
+                if (Form1.ChannelCount >= 3)
                 {
-                    content.Append(tabShift + dataSet[0][Constants.HIGHEST_GM_CH3] +
-                        tabShift + dataSet[1][Constants.HIGHEST_GM_CH3] +
-                        tabShift + dataSet[0][Constants.STATUS_CH2]);
+                    try
+                    {
+                        content.Append(tabShift + dataSet[0][Constants.HIGHEST_GM_CH3] +
+                            tabShift + dataSet[0][Constants.STATUS_CH3] +
+                            tabShift + dataSet[1][Constants.HIGHEST_GM_CH3] +
+                            tabShift + dataSet[1][Constants.STATUS_CH3]);
+                    }
+                    catch
+                    { }
                 }
-                catch
-                { }
-
                 content.Append(tabShift + status + Environment.NewLine);
             }
             else
-                content.Append(tabShift + defaultString +
+                content.Append(tabShift + stringNotApplicable +
+                    tabShift + stringNotApplicable +
+                    tabShift + "UnVerified" +
                     tabShift + "UnVerified" + Environment.NewLine);
 
             File.AppendAllText(fileName, content.ToString());
         }
 
+        private StringBuilder AppendBasicInfo(List<Dictionary<string, string>> dataSet)
+        {
+            StringBuilder stringBuilder= new StringBuilder(Constants.CUSTOMER + tabShift + dataSet[0][Constants.CUSTOMER] +
+                    newLine + Constants.SHIFTINCHARGE + tabShift + dataSet[0][Constants.SHIFTINCHARGE] +
+                    newLine + Constants.OPERATOR + tabShift + dataSet[0][Constants.OPERATOR] +
+                    newLine + Constants.SHIFTVALUE + tabShift + dataSet[0][Constants.SHIFTVALUE] +
+                    newLine + "Batch No" +
+                tabShift + "Gear No" +
+                tabShift + "Date" +
+                tabShift + "Highest(F) CH1" +
+                tabShift + "RPM(F)" +
+                tabShift + "Status(F) CH1" +
+                tabShift + "Highest(R) CH1" +
+                tabShift + "RPM(R)" +
+                tabShift + "Status(R) CH1");
+            if (Form1.ChannelCount >= 2)
+            {
+                stringBuilder.Append(tabShift + "Highest(F) CH2" +
+                tabShift + "Status(F) CH2" +
+                tabShift + "Highest(R) CH2" +
+                tabShift + "Status(R) CH2");
+            }
+            if (Form1.ChannelCount >= 3)
+            {
+                stringBuilder.Append(tabShift + "Highest(F) CH3" +
+               tabShift + "Status(F) CH3" +
+               tabShift + "Highest(R) CH3" +
+               tabShift + "Status(R) CH3");
+            }
+            stringBuilder.Append(tabShift + "Final Status");
+            return stringBuilder;
+        }
+
         private StringBuilder AppendDefaultData(string BatchNo, String GearNo, List<Dictionary<string, string>> dataSet)
         {
-            return new StringBuilder(dataSet[0][Constants.CUSTOMER] +
-                    tabShift + dataSet[0][Constants.SHIFTINCHARGE] +
-                    tabShift + dataSet[0][Constants.OPERATOR] +
-                    tabShift + dataSet[0][Constants.SHIFTVALUE] +
-                    tabShift + BatchNo +
+            return new StringBuilder(newLine + BatchNo +
                     tabShift + GearNo +
                     tabShift + dataSet[0][Constants.DATETIME] +
-                    tabShift + dataSet[0][Constants.HIGHEST] +
                     tabShift + dataSet[0][Constants.HIGHEST_GM_CH1] +
-                    tabShift + dataSet[0][Constants.RPM]);
+                    tabShift + dataSet[0][Constants.RPM]+
+                    tabShift + dataSet[0][Constants.STATUS_CH1]);
         }
 
         public void SaveReportPassValues(string fileName, string BatchNo, String GearNo, List<Dictionary<string, string>> dataSet)
@@ -389,7 +425,7 @@ namespace Eicher
                 var graph = GenerateReportGraph(fileName, xData, yData);
             }
             else
-                File.AppendAllText(fileName, BatchNo + tabShift + GearNo + tabShift + dataSet[0][Constants.HIGHEST] + tabShift + defaultString + tabShift + "UnVerified" + Environment.NewLine);
+                File.AppendAllText(fileName, BatchNo + tabShift + GearNo + tabShift + dataSet[0][Constants.HIGHEST] + tabShift + stringNotApplicable + tabShift + "UnVerified" + Environment.NewLine);
 
         }
         public static byte[] ImageToByte(Image img)
