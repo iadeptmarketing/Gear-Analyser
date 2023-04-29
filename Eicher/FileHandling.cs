@@ -298,6 +298,7 @@ namespace Eicher
         }
         public void SaveReportValues(string fileName, string BatchNo, String GearNo, List<Dictionary<string, string>> dataSet)
         {
+            UpdateChannelCount(dataSet);
             string status = Constants.FAIL;
             StringBuilder content = AppendBasicInfo(dataSet);
             content.Append(AppendDefaultData(BatchNo, GearNo, dataSet));
@@ -309,11 +310,18 @@ namespace Eicher
                 {
                     status = Constants.PASS;
                 }
-
-                content.Append(tabShift + dataSet[1][Constants.HIGHEST_GM_CH1] +
-                    tabShift + dataSet[1][Constants.RPM] +
-                    tabShift + dataSet[1][Constants.STATUS_CH1]);
-
+                if (Form1.ChannelCount < 2)
+                {
+                    content.Append(tabShift + dataSet[1][Constants.HIGHEST] +
+                        tabShift + dataSet[1][Constants.RPM] +
+                        tabShift + dataSet[1][Constants.STATUS]);
+                }
+                else
+                {
+                    content.Append(tabShift + dataSet[1][Constants.HIGHEST_GM_CH1] +
+                        tabShift + dataSet[1][Constants.RPM] +
+                        tabShift + dataSet[1][Constants.STATUS_CH1]);
+                }
                 if (Form1.ChannelCount >= 2)
                 {
                     try
@@ -347,6 +355,30 @@ namespace Eicher
                     tabShift + "UnVerified" + Environment.NewLine);
 
             File.AppendAllText(fileName, content.ToString());
+        }
+
+        private void UpdateChannelCount(List<Dictionary<string, string>> dataSet)
+        {
+            try
+            {
+                Form1.ChannelCount = 1;
+                if (!string.IsNullOrEmpty(dataSet[0][Constants.STATUS_CH1]))
+                {
+                    Form1.ChannelCount = 1;
+                }
+                if (!string.IsNullOrEmpty(dataSet[0][Constants.STATUS_CH2]))
+                {
+                    Form1.ChannelCount = 2;
+                }
+                if (!string.IsNullOrEmpty(dataSet[0][Constants.STATUS_CH3]))
+                {
+                    Form1.ChannelCount = 3;
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         private StringBuilder AppendBasicInfo(List<Dictionary<string, string>> dataSet)
@@ -384,12 +416,19 @@ namespace Eicher
 
         private StringBuilder AppendDefaultData(string BatchNo, String GearNo, List<Dictionary<string, string>> dataSet)
         {
+            string highest = dataSet[0][Constants.HIGHEST];
+            string status = dataSet[0][Constants.STATUS];
+            if (Form1.ChannelCount >= 2)
+            {
+                highest = dataSet[0][Constants.HIGHEST_GM_CH1];
+                status = dataSet[0][Constants.STATUS_CH1];
+            }
             return new StringBuilder(newLine + BatchNo +
                     tabShift + GearNo +
                     tabShift + dataSet[0][Constants.DATETIME] +
-                    tabShift + dataSet[0][Constants.HIGHEST_GM_CH1] +
+                    tabShift + highest +
                     tabShift + dataSet[0][Constants.RPM]+
-                    tabShift + dataSet[0][Constants.STATUS_CH1]);
+                    tabShift + status);
         }
 
         public void SaveReportPassValues(string fileName, string BatchNo, String GearNo, List<Dictionary<string, string>> dataSet)
