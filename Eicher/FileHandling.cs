@@ -8,10 +8,23 @@ using System.Text;
 
 namespace Eicher
 {
-    class FileHandling
+    public sealed class FileHandling
     {
-        string defaultString = "N/A";
+        private const string tabShift = "\t";
+        private const string newLine = "\n";
+        string stringNotApplicable = "N/A";
+        public Form1 Form1 { get; set; }
 
+        private static FileHandling Instance = null;
+
+        public static FileHandling GetInstance()
+        {
+            if (Instance == null)
+            {
+                Instance = new FileHandling();
+            }
+            return Instance;
+        }
 
         public void CreateDefaultValueFile()
         {
@@ -193,20 +206,32 @@ namespace Eicher
             File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.GM4 + " " + datastring + " : " + main.GM4Value + Environment.NewLine);
             File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.GM5 + " " + datastring + " : " + main.GM5Value + Environment.NewLine);
             File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.GM6 + " " + datastring + " : " + main.GM6Value + Environment.NewLine);
-            //TODO: If channel 2 and channel 3 data is available have to add it here in reporting.
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM1 + " " + datastring + " : " + main.GM1CH2Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM2 + " " + datastring + " : " + main.GM2CH2Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM3 + " " + datastring + " : " + main.GM3CH2Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM4 + " " + datastring + " : " + main.GM4CH2Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM5 + " " + datastring + " : " + main.GM5CH2Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM6 + " " + datastring + " : " + main.GM6CH2Value + Environment.NewLine);
-            
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM1 + " " + datastring + " : " + main.GM1CH3Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM2 + " " + datastring + " : " + main.GM2CH3Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM3 + " " + datastring + " : " + main.GM3CH3Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM4 + " " + datastring + " : " + main.GM4CH3Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM5 + " " + datastring + " : " + main.GM5CH3Value + Environment.NewLine);
-            File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM6 + " " + datastring + " : " + main.GM6CH3Value + Environment.NewLine);
+
+            if (main.ChannelCount >= 2)
+            {
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.STATUS_CH1 + " " + datastring + " : " + main.Status_CH1 + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.HIGHEST_GM_CH1 + " " + datastring + " : " + main.Highest_GM_CH1 + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.STATUS_CH2 + " " + datastring + " : " + main.Status_CH2 + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.HIGHEST_GM_CH2 + " " + datastring + " : " + main.Highest_GM_CH2 + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM1 + " " + datastring + " : " + main.GM1CH2Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM2 + " " + datastring + " : " + main.GM2CH2Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM3 + " " + datastring + " : " + main.GM3CH2Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM4 + " " + datastring + " : " + main.GM4CH2Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM5 + " " + datastring + " : " + main.GM5CH2Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH2GM6 + " " + datastring + " : " + main.GM6CH2Value + Environment.NewLine);
+            }
+
+            if (main.ChannelCount >= 3)
+            {
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.STATUS_CH3 + " " + datastring + " : " + main.Status_CH3 + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.HIGHEST_GM_CH3 + " " + datastring + " : " + main.Highest_GM_CH3 + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM1 + " " + datastring + " : " + main.GM1CH3Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM2 + " " + datastring + " : " + main.GM2CH3Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM3 + " " + datastring + " : " + main.GM3CH3Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM4 + " " + datastring + " : " + main.GM4CH3Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM5 + " " + datastring + " : " + main.GM5CH3Value + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.CH3GM6 + " " + datastring + " : " + main.GM6CH3Value + Environment.NewLine);
+            }
 
             File.AppendAllText(Constants.LOCALTEMPREPORTFILE, Constants.RPM + " " + datastring + " : " + main.RPM + Environment.NewLine);
             File.AppendAllText(Constants.LOCALTEMPREPORTFILE, "XData-Ch1 " + datastring + " : " + string.Join(", ", main.XData) + Environment.NewLine);
@@ -236,24 +261,176 @@ namespace Eicher
 
         public void SaveReportFileHeader(string fileName)
         {
-            File.AppendAllText(fileName, Constants.CUSTOMER + "\t" + Constants.SHIFTINCHARGE + "\t" + Constants.OPERATOR + "\t" + Constants.SHIFTVALUE + "\t" + "Batch No" + "\t" + "Gear No" + "\t" +"Date" + "\t" + "Highest(F)" + "\t" + "Highest(R)" + "\t" + "Status" + Environment.NewLine);
+            StringBuilder content = new StringBuilder();
+            content.Append(Constants.CUSTOMER +
+                tabShift + Constants.SHIFTINCHARGE +
+                tabShift + Constants.OPERATOR +
+                tabShift + Constants.SHIFTVALUE +
+                tabShift + "Batch No" +
+                tabShift + "Gear No" +
+                tabShift + "Date" +
+                tabShift + "Highest(F)" +
+                tabShift + "Highest(F) CH1" +
+                tabShift + "RPM(F)" +
+                tabShift + "Highest(R)" +
+                tabShift + "Highest(R) CH1" +
+                tabShift + "RPM(R)");
+
+            //if (Form1.ChannelCount >= 2)
+            {
+                content.Append(tabShift + "Status CH1" +
+                    tabShift + "Highest(F) CH2" +
+                    tabShift + "Highest(R) CH2" +
+                    tabShift + "Status CH2");
+            }
+
+            //if (Form1.ChannelCount >= 3)
+            {
+                content.Append(tabShift + "Highest(F) CH3" +
+                    tabShift + "Highest(R) CH3" +
+                    tabShift + "Status CH3");
+            }
+
+            content.Append(tabShift + "Final Status" + Environment.NewLine);
+
+            File.AppendAllText(fileName, content.ToString());
 
         }
         public void SaveReportValues(string fileName, string BatchNo, String GearNo, List<Dictionary<string, string>> dataSet)
         {
+            UpdateChannelCount(dataSet);
             string status = Constants.FAIL;
-            if (dataSet[1].Count > 0)
+            StringBuilder content = AppendBasicInfo(dataSet);
+            content.Append(AppendDefaultData(BatchNo, GearNo, dataSet));
+
+            if (dataSet[1].Count > 0) //Checking if both forward and reverse data available in dataset
             {
                 if (dataSet[0][Constants.STATUS].Trim() == Constants.PASS
                     && dataSet[1][Constants.STATUS].Trim() == Constants.PASS)
                 {
                     status = Constants.PASS;
                 }
-                File.AppendAllText(fileName, dataSet[0][Constants.CUSTOMER] + "\t" + dataSet[0][Constants.SHIFTINCHARGE] + "\t" + dataSet[0][Constants.OPERATOR] + "\t" + dataSet[0][Constants.SHIFTVALUE] + "\t" + BatchNo + "\t" + GearNo + "\t" + dataSet[0][Constants.DATETIME] + "\t" + dataSet[0][Constants.HIGHEST] + "\t" + dataSet[1][Constants.HIGHEST] + "\t" + status + Environment.NewLine);
+                if (Form1.ChannelCount < 2)
+                {
+                    content.Append(tabShift + dataSet[1][Constants.HIGHEST] +
+                        tabShift + dataSet[1][Constants.RPM] +
+                        tabShift + dataSet[1][Constants.STATUS]);
+                }
+                else
+                {
+                    content.Append(tabShift + dataSet[1][Constants.HIGHEST_GM_CH1] +
+                        tabShift + dataSet[1][Constants.RPM] +
+                        tabShift + dataSet[1][Constants.STATUS_CH1]);
+                }
+                if (Form1.ChannelCount >= 2)
+                {
+                    try
+                    {
+                        content.Append(tabShift + dataSet[0][Constants.HIGHEST_GM_CH2] +
+                            tabShift + dataSet[0][Constants.STATUS_CH2]+
+                            tabShift + dataSet[1][Constants.HIGHEST_GM_CH2] +
+                            tabShift + dataSet[1][Constants.STATUS_CH2]);
+                    }
+                    catch
+                    { }
+                }
+                if (Form1.ChannelCount >= 3)
+                {
+                    try
+                    {
+                        content.Append(tabShift + dataSet[0][Constants.HIGHEST_GM_CH3] +
+                            tabShift + dataSet[0][Constants.STATUS_CH3] +
+                            tabShift + dataSet[1][Constants.HIGHEST_GM_CH3] +
+                            tabShift + dataSet[1][Constants.STATUS_CH3]);
+                    }
+                    catch
+                    { }
+                }
+                content.Append(tabShift + status + Environment.NewLine);
             }
             else
-                File.AppendAllText(fileName, dataSet[0][Constants.CUSTOMER] + "\t" + dataSet[0][Constants.SHIFTINCHARGE] + "\t" + dataSet[0][Constants.OPERATOR] + "\t" + dataSet[0][Constants.SHIFTVALUE] + "\t" + BatchNo + "\t" + GearNo + "\t" + dataSet[0][Constants.DATETIME] + "\t" + dataSet[0][Constants.HIGHEST] + "\t" + defaultString + "\t" + "UnVerified" + Environment.NewLine);
+                content.Append(tabShift + stringNotApplicable +
+                    tabShift + stringNotApplicable +
+                    tabShift + "UnVerified" +
+                    tabShift + "UnVerified" + Environment.NewLine);
+
+            File.AppendAllText(fileName, content.ToString());
         }
+
+        private void UpdateChannelCount(List<Dictionary<string, string>> dataSet)
+        {
+            try
+            {
+                Form1.ChannelCount = 1;
+                if (!string.IsNullOrEmpty(dataSet[0][Constants.STATUS_CH1]))
+                {
+                    Form1.ChannelCount = 1;
+                }
+                if (!string.IsNullOrEmpty(dataSet[0][Constants.STATUS_CH2]))
+                {
+                    Form1.ChannelCount = 2;
+                }
+                if (!string.IsNullOrEmpty(dataSet[0][Constants.STATUS_CH3]))
+                {
+                    Form1.ChannelCount = 3;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private StringBuilder AppendBasicInfo(List<Dictionary<string, string>> dataSet)
+        {
+            StringBuilder stringBuilder= new StringBuilder(Constants.CUSTOMER + tabShift + dataSet[0][Constants.CUSTOMER] +
+                    newLine + Constants.SHIFTINCHARGE + tabShift + dataSet[0][Constants.SHIFTINCHARGE] +
+                    newLine + Constants.OPERATOR + tabShift + dataSet[0][Constants.OPERATOR] +
+                    newLine + Constants.SHIFTVALUE + tabShift + dataSet[0][Constants.SHIFTVALUE] +
+                    newLine + "Batch No" +
+                tabShift + "Gear No" +
+                tabShift + "Date" +
+                tabShift + "Highest(F) CH1" +
+                tabShift + "RPM(F)" +
+                tabShift + "Status(F) CH1" +
+                tabShift + "Highest(R) CH1" +
+                tabShift + "RPM(R)" +
+                tabShift + "Status(R) CH1");
+            if (Form1.ChannelCount >= 2)
+            {
+                stringBuilder.Append(tabShift + "Highest(F) CH2" +
+                tabShift + "Status(F) CH2" +
+                tabShift + "Highest(R) CH2" +
+                tabShift + "Status(R) CH2");
+            }
+            if (Form1.ChannelCount >= 3)
+            {
+                stringBuilder.Append(tabShift + "Highest(F) CH3" +
+               tabShift + "Status(F) CH3" +
+               tabShift + "Highest(R) CH3" +
+               tabShift + "Status(R) CH3");
+            }
+            stringBuilder.Append(tabShift + "Final Status");
+            return stringBuilder;
+        }
+
+        private StringBuilder AppendDefaultData(string BatchNo, String GearNo, List<Dictionary<string, string>> dataSet)
+        {
+            string highest = dataSet[0][Constants.HIGHEST];
+            string status = dataSet[0][Constants.STATUS];
+            if (Form1.ChannelCount >= 2)
+            {
+                highest = dataSet[0][Constants.HIGHEST_GM_CH1];
+                status = dataSet[0][Constants.STATUS_CH1];
+            }
+            return new StringBuilder(newLine + BatchNo +
+                    tabShift + GearNo +
+                    tabShift + dataSet[0][Constants.DATETIME] +
+                    tabShift + highest +
+                    tabShift + dataSet[0][Constants.RPM]+
+                    tabShift + status);
+        }
+
         public void SaveReportPassValues(string fileName, string BatchNo, String GearNo, List<Dictionary<string, string>> dataSet)
         {
             string status = Constants.FAIL;
@@ -263,8 +440,9 @@ namespace Eicher
                     && dataSet[1][Constants.STATUS].Trim() == Constants.PASS)
                 {
                     status = Constants.PASS;
-
-                    File.AppendAllText(fileName, dataSet[0][Constants.CUSTOMER] + "\t" + dataSet[0][Constants.SHIFTINCHARGE] + "\t" + dataSet[0][Constants.OPERATOR] + "\t" + dataSet[0][Constants.SHIFTVALUE] + "\t" + BatchNo + "\t" + GearNo + "\t" + dataSet[0][Constants.DATETIME] + "\t" + dataSet[0][Constants.HIGHEST] + "\t" + dataSet[1][Constants.HIGHEST] + "\t" + status + Environment.NewLine);
+                    StringBuilder content = AppendDefaultData(BatchNo, GearNo, dataSet);
+                    content.Append(tabShift + status + Environment.NewLine);
+                    File.AppendAllText(fileName, content.ToString());                    
                 }
             }
         }
@@ -278,7 +456,7 @@ namespace Eicher
                 {
                     status = Constants.PASS;
                 }
-                File.AppendAllText(fileName, BatchNo + "\t" + GearNo + "\t" + dataSet[0][Constants.HIGHEST] + "\t" + dataSet[1][Constants.HIGHEST] + "\t" + status + Environment.NewLine);
+                File.AppendAllText(fileName, BatchNo + tabShift + GearNo + tabShift + dataSet[0][Constants.HIGHEST] + tabShift + dataSet[1][Constants.HIGHEST] + tabShift + status + Environment.NewLine);
                 var stringXData = dataSet[0]["XData"].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                 var stringYData = dataSet[0]["YData"].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                 var xData = Array.ConvertAll(stringXData, double.Parse);
@@ -286,7 +464,7 @@ namespace Eicher
                 var graph = GenerateReportGraph(fileName, xData, yData);
             }
             else
-                File.AppendAllText(fileName, BatchNo + "\t" + GearNo + "\t" + dataSet[0][Constants.HIGHEST] + "\t" + defaultString + "\t" + "UnVerified" + Environment.NewLine);
+                File.AppendAllText(fileName, BatchNo + tabShift + GearNo + tabShift + dataSet[0][Constants.HIGHEST] + tabShift + stringNotApplicable + tabShift + "UnVerified" + Environment.NewLine);
 
         }
         public static byte[] ImageToByte(Image img)

@@ -31,7 +31,7 @@ namespace Eicher
                 MessageBox.Show("Username/Password field can not be empty","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            FileHandling fileHandling = new FileHandling();
+            FileHandling fileHandling = FileHandling.GetInstance();
             var password = fileHandling.GetPassword(textBoxUser.Text);
             if(password==null)
             {

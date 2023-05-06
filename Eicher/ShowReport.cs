@@ -141,9 +141,9 @@ namespace Eicher
             SaveFileDialog1.Filter = "Excel files (*.xls)|*.xls|txt files (*.txt)|*.txt|Word files (*.doc)|*.doc";
             if (DialogResult.OK == SaveFileDialog1.ShowDialog())
             {
-                fileHandling = new FileHandling();
+                fileHandling = FileHandling.GetInstance();
                 fileName = SaveFileDialog1.FileName;
-                fileHandling.SaveReportFileHeader(SaveFileDialog1.FileName);
+                //fileHandling.SaveReportFileHeader(SaveFileDialog1.FileName);
                 return;
             }
             fileHandling = null;

@@ -8,7 +8,7 @@ namespace Eicher
         public AlarmSettings()
         {
             InitializeComponent();
-            FileHandling fileHandling = new FileHandling();
+            FileHandling fileHandling = FileHandling.GetInstance();
             MaxPeakValue = fileHandling.ReadDefault(Constants.ALARM);
         }
 

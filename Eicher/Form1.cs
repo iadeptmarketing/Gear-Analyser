@@ -8,7 +8,7 @@ namespace Eicher
 {
     public partial class Form1 : Form
     {
-        FileHandling fileHandling = new FileHandling();
+        FileHandling fileHandling = FileHandling.GetInstance();
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +28,7 @@ namespace Eicher
             {
                 toolStripMenuItemSetting.Enabled = false;
             }
+            fileHandling.Form1 = this;
         }
 
         private void CreateDefaultValueFiles()
@@ -198,6 +199,9 @@ namespace Eicher
             get => labelStatus.Text;
             set => labelStatus.Text = value;
         }
+        public string Status_CH1 { get; set; }
+        public string Status_CH2 { get; set; }
+        public string Status_CH3 { get; set; }
         public string BatchNo => textBoxBatchNo.Text;
 
         public string Customer => textBoxCustomer.Text;
@@ -217,7 +221,9 @@ namespace Eicher
             get => labelPeakValue.Text;
             set => labelPeakValue.Text = value;
         }
-
+        public string Highest_GM_CH1{ get; set; }
+        public string Highest_GM_CH2 { get; set; }
+        public string Highest_GM_CH3 { get; set; }
         public string GM1Value
         {
             get => textBoxGM1.Text;
@@ -355,6 +361,9 @@ namespace Eicher
         public List<double> YDataCh3
         { get; set; }
 
+        public int ChannelCount
+        { get; set; }
+
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -392,6 +401,9 @@ namespace Eicher
             {
                 AnalyzeData analyseData = new AnalyzeData();
                 Status = analyseData.FetchStatus(HighestPeakValue);
+                Status_CH1 = analyseData.FetchStatus(Highest_GM_CH1);
+                Status_CH2 = analyseData.FetchStatus(Highest_GM_CH2);
+                Status_CH3 = analyseData.FetchStatus(Highest_GM_CH3);
             }
             catch (Exception ex)
             {
@@ -424,7 +436,15 @@ namespace Eicher
             double CH3GM6 = !string.IsNullOrEmpty(GM6CH3Value) ? Convert.ToDouble(GM6CH3Value) : 0;
 
             double[] GMs = new double[] { CH1GM1, CH1GM2, CH2GM1, CH2GM2, CH3GM1, CH3GM2 };
+            double[] GMsCH1 = new double[] { CH1GM1, CH1GM2, CH1GM3, CH1GM4, CH1GM5, CH1GM6 };
+            double[] GMsCH2 = new double[] { CH2GM1, CH2GM2, CH2GM3, CH2GM4, CH2GM5, CH2GM6 };
+            double[] GMsCH3 = new double[] { CH3GM1, CH3GM2, CH3GM3, CH3GM4, CH3GM5, CH3GM6 };
+
+            Highest_GM_CH1 = Math.Round(GMsCH1.Max(), 2).ToString();
+            Highest_GM_CH2 = Math.Round(GMsCH2.Max(), 2).ToString();
+            Highest_GM_CH3 = Math.Round(GMsCH3.Max(), 2).ToString();
             HighestPeakValue = Math.Round(GMs.Max(), 2).ToString();
+            
         }
 
         private void buttonRead_Click(object sender, EventArgs e)
@@ -496,13 +516,17 @@ namespace Eicher
         {
             switch(count)
             {
-                case 2:  chartViewFFT.Height = panelGraph.Height; break; 
+                case 2:  chartViewFFT.Height = panelGraph.Height;
+                    ChannelCount = 1; 
+                    break; 
                 case 4:  chartViewFFT.Height = panelGraph.Height / 2;
                     chartViewFFT2.Height = panelGraph.Height / 2;
+                    ChannelCount = 2;
                     break;
                 case 6:  chartViewFFT.Height = panelGraph.Height / 3;
                     chartViewFFT2.Height = panelGraph.Height / 3;
                     chartViewFFT3.Height = panelGraph.Height / 3;
+                    ChannelCount = 3;
                     break;
             }
         }
@@ -631,6 +655,8 @@ namespace Eicher
                 graph.GMXValue = gearAnalysis.GMXValue;
                 graph.DrawGraph(XDataCh3, YDataCh3);
                 chartViewFFT3.Controls.Add(graph);
+
+                labelPeakValue_TextChanged(null, null);
             }
             catch
             {

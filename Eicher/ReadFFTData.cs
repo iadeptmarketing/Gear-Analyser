@@ -483,14 +483,6 @@ namespace Eicher
                 GetDevicestructure(devicedata);
                 // CtrToStart = 248;
 
-
-
-
-
-
-
-
-
                 //Reading ch1 float FFT[size] or int   F(t)[size] ---- CH1 or range of functions. time
                 CtrToStart = 248;
                 fs = new byte[Buf2];
@@ -512,7 +504,6 @@ namespace Eicher
                     YData[i] = Convert.ToDouble(fabc)*1000;
                     //CH1.Add(fabc);
                     CtrToStart += 4;
-
                 }
 
                 if (Is2Channel)
