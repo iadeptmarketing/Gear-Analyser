@@ -110,6 +110,9 @@ namespace Eicher
             this.labelBatchNo = new System.Windows.Forms.Label();
             this.panelStatus = new System.Windows.Forms.Panel();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.instrumentSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.InstrumentSelection701 = new System.Windows.Forms.ToolStripMenuItem();
+            this.InstrumentSelection107 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerDisplay)).BeginInit();
@@ -147,21 +150,21 @@ namespace Eicher
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetToolStripMenuItem.Text = "Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // generateReportToolStripMenuItem
             // 
             this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
-            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.generateReportToolStripMenuItem.Text = "Generate Report";
             this.generateReportToolStripMenuItem.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -170,7 +173,8 @@ namespace Eicher
             this.toolStripMenuItemSetting.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alarmSettingsToolStripMenuItem,
             this.gearDetailsToolStripMenuItem,
-            this.reportSettingsToolStripMenuItem});
+            this.reportSettingsToolStripMenuItem,
+            this.instrumentSettingsToolStripMenuItem});
             this.toolStripMenuItemSetting.Name = "toolStripMenuItemSetting";
             this.toolStripMenuItemSetting.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItemSetting.Text = "Settings";
@@ -180,21 +184,21 @@ namespace Eicher
             // alarmSettingsToolStripMenuItem
             // 
             this.alarmSettingsToolStripMenuItem.Name = "alarmSettingsToolStripMenuItem";
-            this.alarmSettingsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.alarmSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alarmSettingsToolStripMenuItem.Text = "Alarm Settings";
             this.alarmSettingsToolStripMenuItem.Click += new System.EventHandler(this.alarmSettingsToolStripMenuItem_Click);
             // 
             // gearDetailsToolStripMenuItem
             // 
             this.gearDetailsToolStripMenuItem.Name = "gearDetailsToolStripMenuItem";
-            this.gearDetailsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.gearDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gearDetailsToolStripMenuItem.Text = "Gear Settings";
             this.gearDetailsToolStripMenuItem.Click += new System.EventHandler(this.gearDetailsToolStripMenuItem_Click);
             // 
             // reportSettingsToolStripMenuItem
             // 
             this.reportSettingsToolStripMenuItem.Name = "reportSettingsToolStripMenuItem";
-            this.reportSettingsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.reportSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reportSettingsToolStripMenuItem.Text = "Report Settings";
             this.reportSettingsToolStripMenuItem.Visible = false;
             // 
@@ -209,7 +213,7 @@ namespace Eicher
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1011,6 +1015,34 @@ namespace Eicher
             this.labelStatus.Text = "Status";
             this.labelStatus.TextChanged += new System.EventHandler(this.toolStripStatus_TextChanged);
             // 
+            // instrumentSettingsToolStripMenuItem
+            // 
+            this.instrumentSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.InstrumentSelection701,
+            this.InstrumentSelection107});
+            this.instrumentSettingsToolStripMenuItem.Name = "instrumentSettingsToolStripMenuItem";
+            this.instrumentSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.instrumentSettingsToolStripMenuItem.Text = "Instrument Settings";
+            this.instrumentSettingsToolStripMenuItem.Click += new System.EventHandler(this.instrumentSettingsToolStripMenuItem_Click);
+            // 
+            // InstrumentSelection701
+            // 
+            this.InstrumentSelection701.Checked = true;
+            this.InstrumentSelection701.CheckOnClick = true;
+            this.InstrumentSelection701.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.InstrumentSelection701.Name = "InstrumentSelection701";
+            this.InstrumentSelection701.Size = new System.Drawing.Size(180, 22);
+            this.InstrumentSelection701.Text = "701";
+            this.InstrumentSelection701.CheckStateChanged += new System.EventHandler(this.InstrumentSelection701_CheckStateChanged);
+            // 
+            // InstrumentSelection107
+            // 
+            this.InstrumentSelection107.CheckOnClick = true;
+            this.InstrumentSelection107.Name = "InstrumentSelection107";
+            this.InstrumentSelection107.Size = new System.Drawing.Size(180, 22);
+            this.InstrumentSelection107.Text = "107";
+            this.InstrumentSelection107.CheckStateChanged += new System.EventHandler(this.InstrumentSelection107_CheckStateChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1128,6 +1160,9 @@ namespace Eicher
         private System.Windows.Forms.Label lblC3GM2;
         private System.Windows.Forms.TextBox tbC3GM1;
         private System.Windows.Forms.Label lblC3GM1;
+        private System.Windows.Forms.ToolStripMenuItem instrumentSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem InstrumentSelection701;
+        private System.Windows.Forms.ToolStripMenuItem InstrumentSelection107;
     }
 }
 

@@ -461,8 +461,9 @@ namespace Eicher
                 {
                     throw new NullReferenceException("RPM value can not be blank");
                 }
-                //Connect with instrument and Save latest datafile to localsystem
-                Kohtect107TXV device = Kohtect107TXV.Instance;
+                //Connect with instrument and Save latest datafile to localsystem                
+                Instrument device = InstrumentSelection107.Checked ? device = Kohtect107VF.Instance : device = Kohtect701TXV.Instance;
+                
                 bool newFileSaved = device.CopyFile();
                 if (!newFileSaved)
                 {
@@ -694,6 +695,62 @@ namespace Eicher
         private void textBoxDate_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void instrumentSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InstrumentSelection107_CheckStateChanged(object sender, EventArgs e)
+        {
+            if(InstrumentSelection107.Checked)
+            {
+                InstrumentSelection701.Checked = false;
+                DisplayChannel2(false);
+                DisplayChannel3(false);
+            }
+        }
+
+        private void InstrumentSelection701_CheckStateChanged(object sender, EventArgs e)
+        {
+            if(InstrumentSelection701.Checked)
+            {
+                InstrumentSelection107.Checked = false;
+                DisplayChannel2(true);
+                DisplayChannel3(true);
+            }
+        }
+
+        private void DisplayChannel2(bool display)
+        {
+            lblC2GM1.Visible = display;
+            lblC2GM2.Visible = display;
+            lblC2GM3.Visible = display;
+            lblC2GM4.Visible = display;
+            lblC2GM5.Visible = display;
+            lblC2GM6.Visible = display;
+            tbC2GM1.Visible = display;
+            tbC2GM2.Visible = display;
+            tbC2GM3.Visible = display;
+            tbC2GM4.Visible = display;
+            tbC2GM5.Visible = display;
+            tbC2GM6.Visible = display;
+        }
+        private void DisplayChannel3(bool display)
+        {
+            lblC3GM1.Visible = display;
+            lblC3GM2.Visible = display;
+            lblC3GM3.Visible = display;
+            lblC3GM4.Visible = display;
+            lblC3GM5.Visible = display;
+            lblC3GM6.Visible = display;
+            tbC3GM1.Visible = display;
+            tbC3GM2.Visible = display;
+            tbC3GM3.Visible = display;
+            tbC3GM4.Visible = display;
+            tbC3GM5.Visible = display;
+            tbC3GM6.Visible = display;
         }
     }
 }

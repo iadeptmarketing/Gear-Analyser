@@ -4,16 +4,17 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using trial6;
 
 namespace Eicher
 {
-    public sealed class Kohtect107TXV : Instrument
+    public sealed class Kohtect701TXV : Instrument
     {
-        private static Kohtect107TXV instance = null;
+        private static Kohtect701TXV instance = null;
         private static readonly object padlock = new object();
 
-        public static Kohtect107TXV Instance
+        public static Kohtect701TXV Instance
         {
             get
             {
@@ -21,13 +22,13 @@ namespace Eicher
                 {
                     if (instance == null)
                     {
-                        instance = new Kohtect107TXV();
+                        instance = new Kohtect701TXV();
                     }
                     return instance;
                 }
             }
         }
-        Kohtect107TXV()
+        Kohtect701TXV()
         {
 
         }
@@ -135,8 +136,11 @@ namespace Eicher
                     return true;
 
                 }
+                
             }
             return false;
         }
+
+        
     }
 }
