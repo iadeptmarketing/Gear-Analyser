@@ -9,6 +9,7 @@ namespace Eicher
    static class Common
     {
         public static string AlarmValue { get; set; }
+        public static bool AlarmDataValidation { get; set; }
 
         public static int HexadecimaltoDecimal(string hexadecimal)
         {

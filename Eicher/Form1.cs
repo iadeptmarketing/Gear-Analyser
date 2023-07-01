@@ -62,8 +62,8 @@ namespace Eicher
         {
             if (string.IsNullOrEmpty(Common.AlarmValue))
                 Common.AlarmValue = fileHandling.ReadDefault(Constants.ALARM);
+            Common.AlarmDataValidation = Convert.ToBoolean(fileHandling.ReadDefault(Constants.ALARMDATAVALIDATION));
             panelStatus.BackColor = Color.RoyalBlue;
-
             CommonSetting();
         }
         private void CommonSetting()
@@ -152,6 +152,8 @@ namespace Eicher
             {
                 Common.AlarmValue = alarmSettings.MaxPeakValue;
                 fileHandling.SaveDefault(Constants.ALARM, Common.AlarmValue);
+                Common.AlarmDataValidation = alarmSettings.AlarmDataValidation;
+                fileHandling.SaveDefault(Constants.ALARMDATAVALIDATION, Common.AlarmDataValidation.ToString());
             }
         }
 
@@ -480,7 +482,7 @@ namespace Eicher
                 AnalyseAndCreateGraph(dataXY);
                 AnalyzeData analyseData = new AnalyzeData();
 
-                if (analyseData.IsGMFHigherThenRequired(HighestPeakValue))
+                if (Common.AlarmDataValidation && analyseData.IsGMFHigherThenRequired(HighestPeakValue))
                 {
                     MessageBox.Show("Reading is not Perfect. Kindly take reading again in instrument.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

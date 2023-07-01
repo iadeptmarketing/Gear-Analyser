@@ -10,8 +10,13 @@ namespace Eicher
             InitializeComponent();
             FileHandling fileHandling = FileHandling.GetInstance();
             MaxPeakValue = fileHandling.ReadDefault(Constants.ALARM);
+            AlarmDataValidation = Convert.ToBoolean(fileHandling.ReadDefault(Constants.ALARMDATAVALIDATION));
         }
-
+        public bool AlarmDataValidation
+        {
+            get => chkDataAlarmValidation.Checked;
+            set => chkDataAlarmValidation.Checked = value;
+        }
         public string MaxPeakValue
         {
             get => textBoxMaxVal.Text;
@@ -67,6 +72,11 @@ namespace Eicher
                     break;
             }
             
+        }
+        
+        private void chkDataAlarmValidation_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

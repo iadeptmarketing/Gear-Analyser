@@ -33,6 +33,7 @@ namespace Eicher
             this.textBoxMaxVal = new System.Windows.Forms.TextBox();
             this.buttonOK = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.chkDataAlarmValidation = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -80,11 +81,23 @@ namespace Eicher
             this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // chkDataAlarmValidation
+            // 
+            this.chkDataAlarmValidation.AutoSize = true;
+            this.chkDataAlarmValidation.Location = new System.Drawing.Point(10, 45);
+            this.chkDataAlarmValidation.Name = "chkDataAlarmValidation";
+            this.chkDataAlarmValidation.Size = new System.Drawing.Size(207, 17);
+            this.chkDataAlarmValidation.TabIndex = 4;
+            this.chkDataAlarmValidation.Text = "Block Data if GMF > 2.5 X Max Pk Val";
+            this.chkDataAlarmValidation.UseVisualStyleBackColor = true;
+            this.chkDataAlarmValidation.CheckedChanged += new System.EventHandler(this.chkDataAlarmValidation_CheckedChanged);
+            // 
             // AlarmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 101);
+            this.Controls.Add(this.chkDataAlarmValidation);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.textBoxMaxVal);
@@ -107,5 +120,6 @@ namespace Eicher
         private System.Windows.Forms.TextBox textBoxMaxVal;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox chkDataAlarmValidation;
     }
 }

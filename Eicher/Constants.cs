@@ -62,6 +62,8 @@ namespace Eicher
         public const string GEAR = "Gear";
         public const string USER = "User";
         public const string PASSWORD = "Password";
+
+        public const string ALARMDATAVALIDATION="ADV";
         //public const string ERROR_LOG_FILE_PATH = Environment.GetFolderPath(Environment.SpecialFolder.System);
 
     }

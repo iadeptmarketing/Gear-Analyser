@@ -33,6 +33,7 @@ namespace Eicher
                 File.AppendAllText(Constants.LOCALINITFILE, Constants.ALARM + " : 10" + Environment.NewLine);
                 File.AppendAllText(Constants.LOCALINITFILE, Constants.PINION + " : 22" + Environment.NewLine);
                 File.AppendAllText(Constants.LOCALINITFILE, Constants.GEAR + " : 45" + Environment.NewLine);
+                File.AppendAllText(Constants.LOCALINITFILE, Constants.ALARMDATAVALIDATION+" : false" + Environment.NewLine);
             }
             if (!File.Exists("Initialize.ini"))
             {
